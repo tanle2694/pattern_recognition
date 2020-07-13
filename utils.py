@@ -34,7 +34,13 @@ class PolynomialRegression():
 
     def compute_loss(self, x_test, y_test):
         y_predict = self.predict(x_test)
-        loss = np.sum((y_predict - y_test)**2)
+        loss = np.sum((y_predict - y_test)**2) * 0.5
+
+        return loss
+
+    def rmse(self, x_test, y_test):
+        y_predict = self.predict(x_test)
+        loss = np.sqrt(np.mean(np.square(y_predict - y_test)))
         return loss
 
 
