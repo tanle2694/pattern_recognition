@@ -1,6 +1,6 @@
 import numpy as np
 from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression, Ridge, Lasso
 import matplotlib.pyplot as plt
 
 np.random.seed(1234)
@@ -17,12 +17,16 @@ def generate_random_data(x_min, x_max, y_function, size, use_x_linspace=True, no
 
 class PolynomialRegression():
 
-    def __init__(self, x, y, order):
+    def __init__(self, x, y, order, use_l2=False, use_l1=False, lamda_value=0):
         x = x.reshape(-1, 1)
         y = y.reshape(-1, 1)
         self.poly = PolynomialFeatures(degree=order)
         X = self.poly.fit_transform(x)
         self.regressor = LinearRegression()
+        if use_l2:
+            self.regressor = Ridge(alpha=lamda_value)
+        if use_l1:
+            self.regressor = Lasso(alpha=lamda_value)
         self.regressor.fit(X, y)
 
     def predict(self, x_test):
@@ -42,6 +46,9 @@ class PolynomialRegression():
         y_predict = self.predict(x_test)
         loss = np.sqrt(np.mean(np.square(y_predict - y_test)))
         return loss
+
+    def get_coefficients(self):
+        return self.regressor.coef_
 
 
 def plot_curve(ax, function_plot, x_min=0, x_max=1, size=10000, color='r', label=''):
