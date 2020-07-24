@@ -47,7 +47,13 @@ Implementing algorithms described in the book "Pattern Recognition and Machine L
     polynomial.
     
         ![](images/fig_1_8.png)
-
+    
+    - **Figure 1.12**: The concept of probability for discrete variables can be extended to that of a probability
+    density p(x) over a continuous variable x and is such that the probability of x lying in the interval (x, x+δx) is 
+    given by p(x)δx for δx → 0. The probability density can be expressed as the
+    derivative of a cumulative distribution function P(x)
+    
+        ![](images/fig_1_12.png)
 
 ## Refrerences
 Christopher Bishop. (2007). Pattern Recognition and Machine Learning (Information Science and Statistics). Springer
