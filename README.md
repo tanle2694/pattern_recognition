@@ -55,5 +55,18 @@ Implementing algorithms described in the book "Pattern Recognition and Machine L
     
         ![](images/fig_1_12.png)
 
+    - **Figure 1.14**: Illustration of the likelihood function for a Gaussian distribution, shown by the
+    red curve. Here the black points denote a data set of values {xn}, and
+    the likelihood function given by (1.53) corresponds to the product of the blue values. Maximizing the likelihood 
+    involves adjusting the mean and variance of the Gaussian so as to maximize this product.
+    
+        ![](images/fig_1_14.png)
+        
+     - **Figure 1.16**: Schematic illustration of a Gaussian conditional distribution for t given x given by
+    (1.60), in which the mean is given by the polynomial function y(x, w), and the precision is given
+    by the parameter β, which is related to the variance by β−1 = σ2.
+    
+        ![](images/fig_1_16.png)
+     
 ## Refrerences
 Christopher Bishop. (2007). Pattern Recognition and Machine Learning (Information Science and Statistics). Springer
